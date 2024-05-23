@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.clone_financeapp.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:name="com.example.clone_financeapp.ui.home.ReviewFragment"
+        android:label="@string/menu_review"
+        tools:layout="@layout/fragment_review" />
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.example.clone_financeapp.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:name="com.example.clone_financeapp.ui.gallery.BalanceFragment"
+        android:label="@string/menu_balance"
+        tools:layout="@layout/fragment_balance" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.example.clone_financeapp.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:name="com.example.clone_financeapp.ui.slideshow.OperationsFragment"
+        android:label="@string/menu_operations"
+        tools:layout="@layout/fragment_operations" />
 </navigation>
