@@ -10,4 +10,6 @@
     <string name="menu_review">Обзор</string>
     <string name="menu_balance">Баланс</string>
     <string name="menu_operations">Операции</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
 </resources>
