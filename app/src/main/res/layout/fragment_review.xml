@@ -1,9 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.home.ReviewFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/balance_container"
+        android:layout_width="360dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/darker_gray"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"        >
+
+        <TextView
+            android:id="@+id/review_balance_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Баланс"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            >
+
+        >
+
+        </TextView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/pieChartDiagramm"
+            app:layout_constraintTop_toBottomOf="@+id/review_balance_title">
+
+            <TextView
+                android:id="@+id/textViewIncomesLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Доходы:"
+                android:textColor="@android:color/white"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="parent"
+
+                />
+
+            <TextView
+                android:id="@+id/textViewExpensesLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="8dp"
+                android:text="Расходы:"
+                android:textColor="@android:color/white"
+                android:textSize="13sp"
+                app:layout_constraintTop_toBottomOf="@id/textViewIncomesLabel"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewTotalLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="8dp"
+                android:text="Всего:"
+                android:textColor="@android:color/white"
+                android:textSize="13sp"
+                app:layout_constraintTop_toBottomOf="@id/textViewExpensesLabel"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewIncomesValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="18.560,70 ₸"
+                android:textColor="@android:color/holo_green_light"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/textViewIncomesLabel"
+                app:layout_constraintTop_toTopOf="@id/textViewIncomesLabel" />
+
+            <TextView
+                android:id="@+id/textViewExpensesValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="-24.080,63 ₸"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@id/textViewExpensesLabel"
+                app:layout_constraintTop_toTopOf="@id/textViewExpensesLabel" />
+
+            <TextView
+                android:id="@+id/textViewTotalValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="-5.519,93 ₸"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/textViewTotalLabel"
+                app:layout_constraintTop_toTopOf="@id/textViewTotalLabel" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pieChartDiagramm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Месяц"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/pieChart" />
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pieChart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -49,6 +195,7 @@
 
             </Button>
         </LinearLayout>
-    </RelativeLayout>
+
+       </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
