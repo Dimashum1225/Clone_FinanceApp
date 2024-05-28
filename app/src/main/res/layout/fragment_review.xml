@@ -8,9 +8,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/balance_container"
-        android:layout_width="360dp"
         android:layout_height="140dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
         android:background="@color/darker_gray"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,8 +20,8 @@
             android:id="@+id/review_balance_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Баланс"
-            android:textSize="20dp"
+            android:text="@string/balance_text"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="@color/white"
 
@@ -31,7 +31,7 @@
 
             >
 
-        >
+
 
         </TextView>
 
@@ -47,11 +47,11 @@
                 android:id="@+id/textViewIncomesLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Доходы:"
+                android:text="@string/incomes_text"
                 android:textColor="@android:color/white"
                 android:textSize="13sp"
                 app:layout_constraintStart_toStartOf="parent"
-
+                app:layout_constraintTop_toTopOf="parent"
                 />
 
             <TextView
@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
 
                 android:layout_marginTop="8dp"
-                android:text="Расходы:"
+                android:text="@string/expenses_text"
                 android:textColor="@android:color/white"
                 android:textSize="13sp"
                 app:layout_constraintTop_toBottomOf="@id/textViewIncomesLabel"
@@ -72,7 +72,7 @@
                 android:layout_height="wrap_content"
 
                 android:layout_marginTop="8dp"
-                android:text="Всего:"
+                android:text="@string/in_total_text"
                 android:textColor="@android:color/white"
                 android:textSize="13sp"
                 app:layout_constraintTop_toBottomOf="@id/textViewExpensesLabel"
@@ -88,7 +88,8 @@
                 android:textSize="13sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/textViewIncomesLabel"
-                app:layout_constraintTop_toTopOf="@id/textViewIncomesLabel" />
+                app:layout_constraintTop_toTopOf="@id/textViewIncomesLabel"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/textViewExpensesValue"
@@ -101,7 +102,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@id/textViewExpensesLabel"
-                app:layout_constraintTop_toTopOf="@id/textViewExpensesLabel" />
+                app:layout_constraintTop_toTopOf="@id/textViewExpensesLabel"
+                tools:ignore="HardcodedText" />
+
+
 
             <TextView
                 android:id="@+id/textViewTotalValue"
@@ -113,7 +117,10 @@
                 android:textSize="13sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/textViewTotalLabel"
-                app:layout_constraintTop_toTopOf="@id/textViewTotalLabel" />
+                app:layout_constraintTop_toTopOf="@id/textViewTotalLabel"
+                tools:ignore="HardcodedText" />
+
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -151,27 +158,64 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/accounts_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="80dp"
+        android:layout_margin="20dp"
+        android:background="@color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/balance_container">
+
+        <TextView
+            android:id="@+id/textview_accounts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/accounts"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            >
+
+        </TextView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewAccounts"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_accounts">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:layout_marginEnd="16dp">
+            android:orientation="vertical">
+
             <Button
                 android:id="@+id/plusButton"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/green"
                 android:text="@string/plus"
-                android:visibility="gone"
-                >
+                android:visibility="gone">
 
             </Button>
 
@@ -190,12 +234,11 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/blue"
-                android:text="@string/plus"
-                >
+                android:text="@string/plus">
 
             </Button>
         </LinearLayout>
 
-       </RelativeLayout>
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

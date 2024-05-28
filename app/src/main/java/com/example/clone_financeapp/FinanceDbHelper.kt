@@ -268,5 +268,5 @@ class FinanceDBHelper(private val context: Context) : SQLiteOpenHelper(context, 
 }
 
 data class Transaction(val amount: Double, val category: String, val date: String,val type: String)
-
+data class Account(val name :String,val Money_count: Double)
 
