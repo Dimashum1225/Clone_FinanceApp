@@ -176,6 +176,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/gistogram"
         android:layout_width="match_parent"
         android:layout_height="160dp"
         android:layout_margin="20dp"
@@ -208,7 +209,36 @@
         </com.github.mikephil.charting.charts.BarChart>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_margin="20dp"
+        android:background="@color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@id/gistogram"
+        >
 
+        <TextView
+            android:id="@+id/operations_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/operations"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+        </TextView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            app:layout_constraintTop_toBottomOf="@id/operations_textview">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/buttons_container"
