@@ -36,9 +36,7 @@ class ReviewFragment : Fragment() {
         _binding = FragmentReviewBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-//        val textView: TextView = binding.
         homeViewModel.text.observe(viewLifecycleOwner) {
-//            textView.text = it
             mainButton = binding.mainButton
             plusButton = binding.plusButton
             minusButton = binding.minusButton
@@ -46,7 +44,13 @@ class ReviewFragment : Fragment() {
             mainButton.setOnClickListener{
                 toggleButtons()
             }
+            plusButton.setOnClickListener{
+                openAddIncomes()
+            }
         }
+
+
+
         return root
     }
 
@@ -63,4 +67,8 @@ class ReviewFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+    fun openAddIncomes(){
+
+    }
+
 }

@@ -29,6 +29,7 @@
 
 
 
+
     </androidx.constraintlayout.widget.ConstraintLayout>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -39,6 +40,12 @@
         android:layout_marginRight="50sp"
         android:layout_marginBottom="100sp"
         >
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewIncomes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
 
+    </androidx.recyclerview.widget.RecyclerView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
