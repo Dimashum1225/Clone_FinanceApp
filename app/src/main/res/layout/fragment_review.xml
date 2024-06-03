@@ -14,7 +14,7 @@
         android:background="@color/darker_gray"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"        >
+        app:layout_constraintStart_toStartOf="parent" >
 
         <TextView
             android:id="@+id/review_balance_title"
@@ -24,16 +24,9 @@
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="@color/white"
-
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-
-            >
-
-
-
-        </TextView>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
@@ -51,14 +44,12 @@
                 android:textColor="@android:color/white"
                 android:textSize="13sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/textViewExpensesLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:layout_marginTop="8dp"
                 android:text="@string/expenses_text"
                 android:textColor="@android:color/white"
@@ -70,7 +61,6 @@
                 android:id="@+id/textViewTotalLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:layout_marginTop="8dp"
                 android:text="@string/in_total_text"
                 android:textColor="@android:color/white"
@@ -105,8 +95,6 @@
                 app:layout_constraintTop_toTopOf="@id/textViewExpensesLabel"
                 tools:ignore="HardcodedText" />
 
-
-
             <TextView
                 android:id="@+id/textViewTotalValue"
                 android:layout_width="wrap_content"
@@ -120,15 +108,13 @@
                 app:layout_constraintTop_toTopOf="@id/textViewTotalLabel"
                 tools:ignore="HardcodedText" />
 
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/pieChartDiagramm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent">
@@ -154,8 +140,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -176,12 +160,9 @@
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
-
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            >
-
-        </TextView>
+            app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewAccounts"
@@ -190,55 +171,91 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textview_accounts">
+            app:layout_constraintTop_toBottomOf="@+id/textview_accounts" />
 
-        </androidx.recyclerview.widget.RecyclerView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="160dp"
+        android:layout_margin="20dp"
+        android:background="@color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@+id/accounts_container" >
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:orientation="vertical">
+            android:text="@string/week_operaions"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <Button
-                android:id="@+id/plusButton"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/green"
-                android:text="@string/plus"
-                android:visibility="gone">
+        </TextView>
 
-            </Button>
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/barChart"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3">
 
-            <Button
-                android:id="@+id/minusButton"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/red"
-                android:text="@string/minus"
-                android:visibility="gone">
+        </com.github.mikephil.charting.charts.BarChart>
 
-            </Button>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <Button
-                android:id="@+id/mainButton"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/blue"
-                android:text="@string/plus">
 
-            </Button>
-        </LinearLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/buttons_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintMarginEnd="16dp"
+        app:layout_constraintMarginBottom="16dp"
+        >
 
-    </RelativeLayout>
+        <Button
+            android:id="@+id/plusButton"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/green"
+            android:text="@string/plus"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <Button
+            android:id="@+id/minusButton"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/red"
+            android:text="@string/minus"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/plusButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <Button
+
+            android:id="@+id/mainButton"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/blue"
+            android:text="@string/plus"
+            app:layout_constraintTop_toBottomOf="@+id/minusButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
