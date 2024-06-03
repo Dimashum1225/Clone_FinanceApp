@@ -18,4 +18,5 @@
     <string name="in_total_text">Всего:</string>
     <string name="accounts">Счета</string>
     <string name="week_operaions">Операции за 7 дней</string>
+    <string name="choose_category">Выбрать категорию</string>
 </resources>
