@@ -79,7 +79,7 @@
       android:id="@+id/choose_category"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:background="@color/darker_gray"
+      android:backgroundTint="@color/darker_gray"
       android:text="Выберите категорию"
       android:textColor="@color/white"
       app:layout_constraintTop_toBottomOf="@id/amount_incomes"
