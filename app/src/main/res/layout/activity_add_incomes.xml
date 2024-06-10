@@ -74,18 +74,29 @@
 
 
   </androidx.constraintlayout.widget.ConstraintLayout>
+  <Button
+      android:id="@+id/choose_category"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@color/darker_gray"
+      android:text="Выберите категорию"
+      android:textColor="@color/white"
+      app:layout_constraintTop_toBottomOf="@id/amount_incomes"
 
+      >
+
+  </Button>
   <Button
       android:id="@+id/account_name"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:background="@color/darker_gray"
+      android:backgroundTint="@color/darker_gray"
       android:text="Кошелек"
       android:textColor="@color/white"
 
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/amount_incomes">
+      app:layout_constraintTop_toBottomOf="@+id/choose_category">
 
   </Button>
 
@@ -93,8 +104,10 @@
       android:id="@+id/choose_date"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:background="@color/darker_gray"
+      android:backgroundTint="@color/darker_gray"
       android:text="Выберите Дату"
+      android:textColor="@color/white"
+
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@id/account_name">
@@ -103,6 +116,8 @@
       android:id="@+id/from_whom"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
+      android:textColorHint="@color/white"
+
       android:hint="От кого (Не обязательно)"
       app:layout_constraintTop_toBottomOf="@id/choose_date"
 
@@ -114,6 +129,8 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:hint="Комментарии (Не обязательно) "
+      android:textColorHint="@color/white"
+
       app:layout_constraintTop_toBottomOf="@id/from_whom"
 
       >
@@ -131,7 +148,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="ОТМЕНИТЬ"
-        android:background="@color/green"
+        android:backgroundTint="@color/green"
         android:layout_weight="1"
         android:layout_margin="5sp"
         >
@@ -139,7 +156,7 @@
     </Button>
     <Button
         android:text="СОХРАНИТЬ"
-        android:background="@color/green"
+        android:backgroundTint="@color/green"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
