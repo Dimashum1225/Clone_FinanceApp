@@ -79,7 +79,7 @@
         android:id="@+id/account_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background=""
+        android:background="@color/darker_gray"
         android:text="Кошелек"
         android:textColor="@color/white"
 
@@ -93,7 +93,7 @@
         android:id="@+id/choose_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background=""
+        android:background="@color/darker_gray"
         android:text="Выберите Дату"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

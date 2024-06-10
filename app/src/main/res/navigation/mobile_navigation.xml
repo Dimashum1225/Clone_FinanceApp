@@ -24,7 +24,7 @@
         tools:layout="@layout/fragment_operations" />
     <fragment
         android:id="@+id/nav_add_incomes"
-        android:name="com.example.clone_financeapp.ui.add_incomes.Add_IncomesFragment"
+        android:name="com.example.clone_financeapp.Add_IncomesFragment"
         android:label="@string/add_incomes"
-        tools:layout="@layout/fragment_add_incomes" />
+        tools:layout="@layout/add_incomes_activity_false" />
 </navigation>
