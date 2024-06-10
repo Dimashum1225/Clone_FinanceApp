@@ -5,12 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.clone_financeapp.model.Group
 import com.example.clone_financeapp.model.Item
 
 
-class ExpandableAdapter(private val groups: List<Group>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
+class ExpandableAdapter(
+    private val groups: List<Group>,
+    private val onClickListener: (Item,Int) -> Unit
+
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun getItemViewType(position: Int): Int {
         return if (isGroup(position)) VIEW_TYPE_GROUP else VIEW_TYPE_ITEM
@@ -26,7 +33,7 @@ class ExpandableAdapter(private val groups: List<Group>) : RecyclerView.Adapter<
         }
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int){
         if (isGroup(position)) {
             val group = getGroup(position)
             (holder as GroupViewHolder).bind(group)
@@ -37,6 +44,10 @@ class ExpandableAdapter(private val groups: List<Group>) : RecyclerView.Adapter<
         } else {
             val item = getItem(position)
             (holder as ItemViewHolder).bind(item)
+            holder.itemView.setOnClickListener{
+                onClickListener(item,position)
+            }
+
         }
     }
 
