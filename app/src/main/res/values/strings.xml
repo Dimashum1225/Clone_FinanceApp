@@ -10,6 +10,8 @@
     <string name="menu_review">Обзор</string>
     <string name="menu_balance">Баланс</string>
     <string name="operations">Операции</string>
+    <string name="add_incomes">Новый доход</string>
+
     <string name="plus">+</string>
     <string name="minus">-</string>
     <string name="balance_text">Баланс</string>
