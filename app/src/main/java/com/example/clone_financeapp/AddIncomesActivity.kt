@@ -13,7 +13,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.clone_financeapp.model.Group
 import com.example.clone_financeapp.model.Item
+import java.text.SimpleDateFormat
 import java.util.Calendar
+import java.util.Locale
 
 class AddIncomesActivity : AppCompatActivity() {
 
@@ -44,14 +46,12 @@ class AddIncomesActivity : AppCompatActivity() {
 
             val datePickerDialog = DatePickerDialog(
                 this,
-                { view, year, monthOfYear, dayOfMonth ->
-                    // on below line we are setting
-                    // date to our text view.
-                    pickDateBtn.text =
-                        (dayOfMonth.toString() + "_" + (monthOfYear + 1) + "_" + year)
+                { _, year, monthOfYear, dayOfMonth ->
+                    val selectedDate = Calendar.getInstance()
+                    selectedDate.set(year, monthOfYear, dayOfMonth)
+                    val dateFormat = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
+                    pickDateBtn.text = dateFormat.format(selectedDate.time)
                 },
-                // on below line we are passing year, month
-                // and day for the selected date in our date picker.
                 year,
                 month,
                 day
