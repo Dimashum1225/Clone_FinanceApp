@@ -31,7 +31,10 @@ class AddIncomesActivity : AppCompatActivity() {
 
 
         pickCategoryBtn.setOnClickListener{
-            showChooseIncomesCategoryDialog(this)
+            showChooseIncomesCategoryDialog(this){ category ->
+                pickCategoryBtn.text = category
+            }
+
         }
         pickDateBtn.setOnClickListener{
             val c = Calendar.getInstance()
@@ -59,7 +62,7 @@ class AddIncomesActivity : AppCompatActivity() {
 
     }
 }
-    private fun showChooseIncomesCategoryDialog(context: Context){
+    private fun showChooseIncomesCategoryDialog(context: Context,onCategorySelected:(String) -> Unit){
         val dialog = Dialog(context)
         dialog.setContentView(R.layout.dialog_choose_incomes_category)
         dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
@@ -70,10 +73,10 @@ class AddIncomesActivity : AppCompatActivity() {
             Group("Group 1", listOf(Item("Item 1.1"), Item("Item 1.2"))),
             Group("Group 2", listOf(Item("Item 2.1"), Item("Item 2.2")))
         )
-
         recyclerView.adapter = ExpandableAdapter(groups){item,position ->
             Toast.makeText(context, "Был выбран пункт ${item.name}", Toast.LENGTH_SHORT).show()
-
+            onCategorySelected(item.name)
+            dialog.dismiss()
         }
         dialog.show()
     }
