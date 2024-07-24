@@ -10,6 +10,7 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.clone_financeapp.AddIncomesActivity
+import com.example.clone_financeapp.FinanceDBHelper
 import com.example.clone_financeapp.databinding.FragmentReviewBinding
 
 class ReviewFragment : Fragment() {
@@ -32,6 +33,8 @@ class ReviewFragment : Fragment() {
         savedInstanceState: Bundle?
 
     ): View {
+
+        println()
         val homeViewModel =
             ViewModelProvider(this).get(ReviewViewModel::class.java)
 

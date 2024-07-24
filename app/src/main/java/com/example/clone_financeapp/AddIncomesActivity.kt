@@ -5,7 +5,6 @@ import android.app.Dialog
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
@@ -21,16 +20,23 @@ class AddIncomesActivity : AppCompatActivity() {
 
     lateinit var pickDateBtn: Button
     lateinit var pickCategoryBtn: Button
-
+    lateinit var cancelBtn: Button
+    lateinit var saveBtn: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_incomes)
 
         pickDateBtn = findViewById(R.id.choose_date)
         pickCategoryBtn = findViewById(R.id.choose_category)
+        cancelBtn = findViewById(R.id.cancel_button)
+        saveBtn = findViewById(R.id.save_button)
 
+        cancelBtn.setOnClickListener{
+            finish()
+        }
+        saveBtn.setOnClickListener{
 
-
+        }
 
         pickCategoryBtn.setOnClickListener{
             showChooseIncomesCategoryDialog(this){ category ->
