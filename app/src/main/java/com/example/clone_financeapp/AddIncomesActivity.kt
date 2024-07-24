@@ -76,11 +76,11 @@ class AddIncomesActivity : AppCompatActivity() {
         val recyclerView = dialog.findViewById<RecyclerView>(R.id.recyclerViewIncomes)
         recyclerView.layoutManager = LinearLayoutManager(context)
         val groups = listOf(
-            Group("Group 1", listOf(Item("Item 1.1"), Item("Item 1.2"))),
-            Group("Group 2", listOf(Item("Item 2.1"), Item("Item 2.2")))
+            Group("Дом", listOf(Item("Оплата за свет"), Item("Оплата за воду"))),
+            Group("Семья", listOf(Item("Папа"), Item("Сестра")))
         )
         recyclerView.adapter = ExpandableAdapter(groups){item,position ->
-            Toast.makeText(context, "Был выбран пункт ${item.name}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Была выбрана категория ${item.name}", Toast.LENGTH_SHORT).show()
             onCategorySelected(item.name)
             dialog.dismiss()
         }
