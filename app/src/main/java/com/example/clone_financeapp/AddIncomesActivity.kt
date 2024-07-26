@@ -14,6 +14,7 @@ import com.example.clone_financeapp.model.Group
 import com.example.clone_financeapp.model.Item
 import java.text.SimpleDateFormat
 import java.util.Calendar
+import java.util.Date
 import java.util.Locale
 
 class AddIncomesActivity : AppCompatActivity() {
@@ -31,6 +32,10 @@ class AddIncomesActivity : AppCompatActivity() {
         cancelBtn = findViewById(R.id.cancel_button)
         saveBtn = findViewById(R.id.save_button)
 
+        val sdf = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
+        val currentDate = sdf.format(Date())
+
+        pickDateBtn.text = currentDate
         cancelBtn.setOnClickListener{
             finish()
         }
